@@ -8,10 +8,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-social.css">
     <link rel="stylesheet" href="css/styles.css" />
+    <!--  endbuild -->
+
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -44,7 +47,7 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                         <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -85,8 +88,8 @@
     <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header bg-warning text-white">
-                    <h4 class="modal-title bg-warning text-white">Reserve a Table</h4>
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -187,7 +190,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a class="btn btn-sm btn-block btn-warning" data-toggle="modal" data-target="#reserveModal" role="button">Reserve Table</a>
+                    <a class="btn btn-sm btn-block btn-warning" id="reserveButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -380,23 +383,9 @@
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <!-- Bootsrap beta 4 replaced Tether with Popper -->
+    <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#mycarousel').carousel({ interval: 2000 });
-            $('#carouselButton').click(function () {
-                if ($('#carouselButton').children('span').hasClass('fa-pause')) {
-                    $('#mycarousel').carousel('pause');
-                    $('#carouselButton').children('span').removeClass('fa-pause');
-                    $('#carouselButton').children('span').addClass('fa-play');
-                }
-                else if ($('#carouselButton').children('span').hasClass('fa-play')) {
-                    $('#mycarousel').carousel('cycle');
-                    $('#carouselButton').children('span').removeClass('fa-play');
-                    $('#carouselButton').children('span').addClass('fa-pause');
-                }
-            });
-        });
-    </script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
